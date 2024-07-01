@@ -24,10 +24,11 @@ def registrar_vehiculo():
             año=int(input("año de fabricacion: "))
             kilometraje=int(input("kilometra del auto: "))
             costo=int(input("costo estimado: "))
-            if marca in autos and len(año)>0 and len(kilometraje)>0 and len(costo)>0:
+            if marca in autos and año>0 and kilometraje>0 and costo>0:
                 servicio=costo*0.08
                 total=costo+servicio
                 orden.append([marca,año, kilometraje,costo,servicio,total])
+                break
         except Exception as e:
             input(f"excepcion menu principal en: {str(e)}")
 
@@ -85,7 +86,7 @@ while True:
         elif opc=='1':
             registrar_vehiculo()
         elif opc=='2':
-            listar_vehiculo()
+            input(listar_vehiculo())
         elif opc=='3':
             imprimir()
     except Exception as e:
